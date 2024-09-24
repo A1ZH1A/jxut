@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -26,7 +28,7 @@
             <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
             <nav>
                 <ul class="list">
-                   <li ><a href="subjectList.html">科目管理</a></li>
+                   <li ><a href="/SubjectServlet">科目管理</a></li>
                    <li><a href="studyList.html">课件管理</a></li>
                    <li><a href="/StudentServlet">用户管理</a></li>
                    <li><a href="password.html">密码修改</a></li>
@@ -50,41 +52,33 @@
                 <tr class="firstTr">
                     <th width="10%">科目编码</th>
                     <th width="20%">科目名称</th>
-                    <th width="20%">创建人</th>
-					<th width="20%">状态</th>
+                    <th width="20%">课时</th>
+					<th width="20%">年级</th>
                     <th width="30%">操作</th>
                 </tr>
+                <c:forEach var="item" items="${subjectList}">
                 <tr>
-                    <td>1</td>
-                    <td>html</td>
-                    <td>admin</td>
-					 <td>正常</td>
+                    <td>${item.subjectId}</td>
+                    <td>${item.subjectName}</td>
+                    <td>${item.classHour}</td>
+                    <td>${item.gradeId}</td>
                     <td>
-                                     
-                        <a href="#" class="removeUser"><img src="img/schu.png" alt="禁用" title="禁用"/></a>
+                        <a href="#" class="removeUser"><img src="img/schu.png" alt="删除" title="删除"/></a>
                     </td>
                 </tr>
-				 <tr>
-                    <td>2</td>
-                    <td>javaScript</td>
-                    <td>admin</td>
-					 <td>正常</td>
-                    <td>
-                       <a href="#" class="removeUser"><img src="img/schu.png" alt="禁用" title="禁用"/>
-                       </a>
-                    </td>
-                </tr>
-				 <tr>
-                    <td>3</td>
-                    <td>java</td>
-                    <td>admin</td>
-					 <td>禁用</td>
-                    <td>
-                       
-                        <a href="userUpdate.html"><img src="img/xiugai.png" alt="启用" title="启用"/></a>
-                       
-                    </td>
-                </tr>
+                </c:forEach>
+
+<%--				 <tr>--%>
+<%--                    <td>3</td>--%>
+<%--                    <td>java</td>--%>
+<%--                    <td>admin</td>--%>
+<%--					 <td>禁用</td>--%>
+<%--                    <td>--%>
+<%--                       --%>
+<%--                        <a href="userUpdate.html"><img src="img/xiugai.png" alt="启用" title="启用"/></a>--%>
+<%--                       --%>
+<%--                    </td>--%>
+<%--                </tr>--%>
                  <tr>
 				<td colspan="5">
 				  当前第1页，6条数据&nbsp;&nbsp;&nbsp;&nbsp;共2页

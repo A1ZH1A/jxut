@@ -137,4 +137,44 @@ public class StudentDao {
         }
         return 0;
     }
+
+    //查询学生信息
+    public Student getStudent(String student_no) {
+        //获取连接对象
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            //获取连接对象
+            conn = DBHelper.getConn();
+            //编写sql
+            String sql = "select * from student where student_no = ?";
+            //获取sql的预处理对象
+            ps = conn.prepareStatement(sql);
+            //添加参数
+            ps.setString(1, student_no);
+            //执行sql
+            rs = ps.executeQuery();
+            if(rs != null){
+                if(rs.next()){
+                    Student student = new Student();
+                    student.setStudent_no(rs.getString("student_no"));
+                    student.setStudent_name(rs.getString("student_name"));
+                    student.setAddress(rs.getString("address"));
+                    student.setEmail(rs.getString("email"));
+                    student.setPhone(rs.getString("phone"));
+                    student.setBorn_date(rs.getString("born_date"));
+                    student.setGrade_id(rs.getInt("Grade_id"));
+                    student.setLogin_pwd(rs.getString("login_pwd"));
+                    student.setSex(rs.getString("Sex"));
+                    return student;
+                }
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBHelper.closeAll(conn, ps, rs);
+        }
+        return null;
+    }
 }

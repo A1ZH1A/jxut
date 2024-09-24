@@ -28,9 +28,9 @@
         <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
         <nav>
             <ul class="list">
-                 <li ><a href="subjectList.html">科目管理</a></li>
+                 <li ><a href="/SubjectServlet">科目管理</a></li>
                 <li><a href="studyList.html">课件管理</a></li>
-                <li><a href="userList.html">用户管理</a></li>
+                <li><a href="/StudentServlet">用户管理</a></li>
                 <li><a href="password.html">密码修改</a></li>
                 <li><a href="login.html">退出系统</a></li>
             </ul>
@@ -75,8 +75,8 @@
                     <span></span>
                 </div>
                 <div>
-                    <label for="data">出生日期：</label>
-                    <input type="date" name="borndate" id="data"/>
+                    <label for="date">出生日期：</label>
+                    <input type="date" name="borndate" id="date"/>
                     <span >*</span>
                 </div>
                 <div>
@@ -102,7 +102,7 @@
                 <div class="providerAddBtn">
                     <!--<a href="#">保存</a>-->
                     <!--<a href="userList.html">返回</a>-->
-                    <input type="submit" value="保存" onclick="history.back(-1)"/>
+                    <input type="submit" value="保存"/>
                     <input type="button" value="返回" onclick="history.back(-1)"/>
                 </div>
             </form>

@@ -28,9 +28,9 @@
         <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
         <nav>
             <ul class="list">
-                <li ><a href="subjectList.html">科目管理</a></li>
+                <li ><a href="/SubjectServlet">科目管理</a></li>
                 <li><a href="studyList.html">课件管理</a></li>
-                <li><a href="userList.html">用户管理</a></li>
+                <li><a href="/StudentServlet">用户管理</a></li>
                 <li><a href="password.html">密码修改</a></li>
                 <li><a href="login.html">退出系统</a></li>
             </ul>
@@ -67,7 +67,7 @@
                 <td>${item.phone}</td>
                 <td>${item.grade_id}</td>
                 <td>
-                    <a href="userView.html"><img src="img/read.png" alt="查看" title="查看"/></a>
+                    <a href="/GetStudentServlet?studentno=${item.student_no}"><img src="img/read.png" alt="查看" title="查看"/></a>
                     <a href="userUpdate.html"><img src="img/xiugai.png" alt="修改" title="修改"/></a>
                     <a href="/DeleteStudentServlet?studentno=${item.student_no}" class="removeUser"><img src="img/schu.png" alt="删除" title="删除"/></a>
                 </td>
