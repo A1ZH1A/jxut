@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -26,77 +26,67 @@
             <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
             <nav>
                 <ul class="list">
-                <li ><a href="subjectList.html">科目管理</a></li>
-                <li><a href="studyList.html">课件管理</a></li>
-                <li><a href="userList.html">用户管理</a></li>
-                <li><a href="password.html">密码修改</a></li>
-                <li><a href="login.html">退出系统</a></li>
+                   <li ><a href="subjectList.html">科目管理</a></li>
+                   <li><a href="studyList.html">课件管理</a></li>
+                   <li><a href="/StudentServlet">用户管理</a></li>
+                   <li><a href="password.html">密码修改</a></li>
+                   <li><a href="login.html">退出系统</a></li>
                 </ul>
             </nav>
         </div>
         <div class="right">
             <div class="location">
                 <strong>你现在所在的位置是:</strong>
-                <span>用户管理页面</span>
+                <span>科目管理页面</span>
             </div>
             <div class="search">
-                <span>用户名：</span>
+                <span>科目名：</span>
                 <input type="text" placeholder="请输入用户名"/>
                 <input type="button" value="查询"/>
-                <a href="userAdd.jsp">添加用户</a>
+                <a href="subjectAdd.html">添加科目</a>
             </div>
             <!--用户-->
             <table class="providerTable" cellpadding="0" cellspacing="0">
                 <tr class="firstTr">
-                    <th width="10%">用户账号</th>
-                    <th width="20%">真实姓名</th>
-                    <th width="10%">性别</th>
-                    <th width="10%">年龄</th>
-                    <th width="10%">电话</th>
-                    <th width="10%">用户类型</th>
+                    <th width="10%">科目编码</th>
+                    <th width="20%">科目名称</th>
+                    <th width="20%">创建人</th>
+					<th width="20%">状态</th>
                     <th width="30%">操作</th>
                 </tr>
                 <tr>
-                    <td>hanlu</td>
-                    <td>韩露</td>
-                    <td>女</td>
-                    <td>20</td>
-                    <td>15918230478</td>
-                    <td>学员</td>
+                    <td>1</td>
+                    <td>html</td>
+                    <td>admin</td>
+					 <td>正常</td>
                     <td>
-                        <a href="userView.html"><img src="img/read.png" alt="查看" title="查看"/></a>
-                        <a href="userUpdate.html"><img src="img/xiugai.png" alt="修改" title="修改"/></a>
-                        <a href="#" class="removeUser"><img src="img/schu.png" alt="删除" title="删除"/></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>PRO-COD1</td>
-                    <td>陈晨</td>
-                    <td>男</td>
-                    <td>30</td>
-					 <td>15918230478</td>
-                    <td>老师</td>
-                    <td>
-                        <a href="userView.html"><img src="img/read.png" alt="查看" title="查看"/></a>
-                        <a href="userUpdate.html"><img src="img/xiugai.png" alt="修改" title="修改"/></a>
-                        <a href="#" class="removeUser"><img src="img/schu.png" alt="删除" title="删除"/></a>
+                                     
+                        <a href="#" class="removeUser"><img src="img/schu.png" alt="禁用" title="禁用"/></a>
                     </td>
                 </tr>
 				 <tr>
+                    <td>2</td>
+                    <td>javaScript</td>
                     <td>admin</td>
-                    <td>冯小刚</td>
-                    <td>男</td>
-                    <td>40</td>
-                    <td>15918230478</td>
-                    <td>管理员</td>
+					 <td>正常</td>
                     <td>
-                        <a href="userView.html"><img src="img/read.png" alt="查看" title="查看"/></a>
-                        <a href="userUpdate.html"><img src="img/xiugai.png" alt="修改" title="修改"/></a>
-                        <a href="#" class="removeUser"><img src="img/schu.png" alt="删除" title="删除"/></a>
+                       <a href="#" class="removeUser"><img src="img/schu.png" alt="禁用" title="禁用"/>
+                       </a>
                     </td>
                 </tr>
-				<tr>
-				<td colspan="7">
+				 <tr>
+                    <td>3</td>
+                    <td>java</td>
+                    <td>admin</td>
+					 <td>禁用</td>
+                    <td>
+                       
+                        <a href="userUpdate.html"><img src="img/xiugai.png" alt="启用" title="启用"/></a>
+                       
+                    </td>
+                </tr>
+                 <tr>
+				<td colspan="5">
 				  当前第1页，6条数据&nbsp;&nbsp;&nbsp;&nbsp;共2页
 			         首页
 			         尾页

@@ -29,7 +29,7 @@
             <ul class="list">
                 <li ><a href="subjectList.html">科目管理</a></li>
                 <li><a href="studyList.html">课件管理</a></li>
-                <li><a href="userList.html">用户管理</a></li>
+                <li><a href="/StudentServlet">用户管理</a></li>
                 <li><a href="password.html">密码修改</a></li>
                 <li><a href="login.html">退出系统</a></li>
             </ul>
