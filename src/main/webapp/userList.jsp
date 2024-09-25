@@ -68,7 +68,7 @@
                 <td>${item.grade_id}</td>
                 <td>
                     <a href="/GetStudentServlet?studentno=${item.student_no}"><img src="img/read.png" alt="查看" title="查看"/></a>
-                    <a href="userUpdate.html"><img src="img/xiugai.png" alt="修改" title="修改"/></a>
+                    <a href="/GetStudentUpdateServlet?studentno=${item.student_no}"><img src="img/xiugai.png" alt="修改" title="修改"/></a>
                     <a href="/DeleteStudentServlet?studentno=${item.student_no}" class="removeUser"><img src="img/schu.png" alt="删除" title="删除"/></a>
                 </td>
             </tr>

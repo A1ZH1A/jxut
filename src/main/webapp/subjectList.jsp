@@ -63,7 +63,7 @@
                     <td>${item.classHour}</td>
                     <td>${item.gradeId}</td>
                     <td>
-                        <a href="#" class="removeUser"><img src="img/schu.png" alt="删除" title="删除"/></a>
+                        <a href="/DeleteSubjectServlet?subjectId=${item.subjectId}" class="removeUser"><img src="img/schu.png" alt="删除" title="删除"/></a>
                     </td>
                 </tr>
                 </c:forEach>
@@ -75,7 +75,7 @@
 <%--					 <td>禁用</td>--%>
 <%--                    <td>--%>
 <%--                       --%>
-<%--                        <a href="userUpdate.html"><img src="img/xiugai.png" alt="启用" title="启用"/></a>--%>
+<%--                        <a href="userUpdate.jsp"><img src="img/xiugai.png" alt="启用" title="启用"/></a>--%>
 <%--                       --%>
 <%--                    </td>--%>
 <%--                </tr>--%>

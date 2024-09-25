@@ -1,33 +1,26 @@
 package org.example.jxut.servlet;
 
 import org.example.jxut.dao.StudentDao;
+import org.example.jxut.model.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/DeleteStudentServlet")
-public class DeleteStudentServlet extends BaseServlet {
-
+@WebServlet("/GetStudentUpdateServlet")
+public class GetStudentUpdateServlet extends BaseServlet{
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         super.service(request, response);
-        // 获取请求参数
+        //获取请求参数
         String studentno = request.getParameter("studentno");
-        //实例化
+        //实例化对象
         StudentDao studentDao = new StudentDao();
-        //调用删除方法
-        int result = studentDao.deleteStudent(studentno);
-        if(result == 1) {
-            System.out.println("删除成功");
-        }else {
-            System.out.println("删除失败");
-        }
-        //重定向获取学生信息
-        response.sendRedirect("StudentServlet");
-
+        Student student = studentDao.getStudent(studentno);
+        //将值添加到作用中
+        request.setAttribute("student", student);
+        request.getRequestDispatcher("userUpdate.jsp").forward(request, response);
     }
 }

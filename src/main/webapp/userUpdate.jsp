@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -44,44 +45,58 @@
             <form action="#">
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <div>
+                    <label for="userName">学号：</label>
+                    <input type="text" name="studentno" id="studentno" value="${student.student_no}" readonly/>
+                    <span >*</span>
+                </div>
+                <div>
                     <label for="userName">真实姓名：</label>
-                    <input type="text" name="userName" id="userName" placeholder="韩露"/>
+                    <input type="text" name="userName" id="userName" value="${student.student_name}"/>
                     <span >*</span>
                 </div>
 
                 <div>
                     <label >用户性别：</label>
 
-                    <select name="">
-                        <option value="man">男</option>
-                        <option value="woman" selected>女</option>
+                    <select name="sex" value="${student.sex}">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
                     </select>
                 </div>
                 <div>
                     <label for="data">出生日期：</label>
-                    <input type="text" name="data" id="data" placeholder="2016年2月1日"/>
+                    <input type="text" name="data" id="data" value="${student.born_date}"/>
                     <span >*</span>
                 </div>
                 <div>
                     <label for="userphone">用户电话：</label>
-                    <input type="text" name="userphone" id="userphone" placeholder="13533667897"/>
+                    <input type="text" name="userphone" id="userphone" value="${student.phone}"/>
                     <span >*</span>
                 </div>
                 <div>
                     <label for="userAddress">用户地址：</label>
-                    <input type="text" name="userAddress" id="userAddress" placeholder="北京"/>
+                    <input type="text" name="userAddress" id="userAddress" value="${student.address}"/>
+                </div>
+                <div>
+                    <label for="userpassword">用户密码：</label>
+                    <input type="text" name="loginpwd" id="userpassword" value="${student.loginpwd}"/>
+                    <span>*密码长度必须大于6位小于20位</span>
+                </div>
+                <div>
+                    <label for="email">邮件：</label>
+                    <input type="text" name="email" id="email" value="${stdent.email}"/>
                 </div>
                 <div>
                     <label >用户类别：</label>
-                     <input type="radio" name="userlei" value="0"/>学员
-                    <input type="radio" name="userlei" value="1"/>老师
-                    <input type="radio" name="userlei" value="2"/>管理员
+                     <input type="radio" name="gradeid" value="1"/>一年级
+                    <input type="radio" name="gradeid" value="2"/>二年级
+                    <input type="radio" name="gradeid" value="3"/>三年级
 
                 </div>
                 <div class="providerAddBtn">
                     <!--<a href="#">保存</a>-->
                     <!--<a href="userList.html">返回</a>-->
-                    <input type="button" value="保存" onclick="history.back(-1)"/>
+                    <input type="submit" value="修改"/>
                     <input type="button" value="返回" onclick="history.back(-1)"/>
                 </div>
             </form>
