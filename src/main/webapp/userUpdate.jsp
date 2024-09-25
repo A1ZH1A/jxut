@@ -42,16 +42,16 @@
             <span>用户管理页面 >> 用户修改页面</span>
         </div>
         <div class="providerAdd">
-            <form action="#">
+            <form action="/UpdateServlet">
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <div>
-                    <label for="userName">学号：</label>
+                    <label for="studentno">学号：</label>
                     <input type="text" name="studentno" id="studentno" value="${student.student_no}" readonly/>
                     <span >*</span>
                 </div>
                 <div>
-                    <label for="userName">真实姓名：</label>
-                    <input type="text" name="userName" id="userName" value="${student.student_name}"/>
+                    <label for="studentname">真实姓名：</label>
+                    <input type="text" name="studentname" id="studentname" value="${student.student_name}"/>
                     <span >*</span>
                 </div>
 
@@ -64,33 +64,33 @@
                     </select>
                 </div>
                 <div>
-                    <label for="data">出生日期：</label>
-                    <input type="text" name="data" id="data" value="${student.born_date}"/>
+                    <label for="borndate">出生日期：</label>
+                    <input type="text" name="borndate" id="borndate" value="${student.born_date}"/>
                     <span >*</span>
                 </div>
                 <div>
-                    <label for="userphone">用户电话：</label>
-                    <input type="text" name="userphone" id="userphone" value="${student.phone}"/>
+                    <label for="phone">用户电话：</label>
+                    <input type="text" name="phone" id="phone" value="${student.phone}"/>
                     <span >*</span>
                 </div>
                 <div>
-                    <label for="userAddress">用户地址：</label>
-                    <input type="text" name="userAddress" id="userAddress" value="${student.address}"/>
+                    <label for="address">用户地址：</label>
+                    <input type="text" name="address" id="address" value="${student.address}"/>
                 </div>
                 <div>
-                    <label for="userpassword">用户密码：</label>
-                    <input type="text" name="loginpwd" id="userpassword" value="${student.loginpwd}"/>
+                    <label for="loginpwd">用户密码：</label>
+                    <input type="text" name="loginpwd" id="loginpwd" value="${student.login_pwd}"/>
                     <span>*密码长度必须大于6位小于20位</span>
                 </div>
                 <div>
                     <label for="email">邮件：</label>
-                    <input type="text" name="email" id="email" value="${stdent.email}"/>
+                    <input type="text" name="email" id="email" value="${student.email}"/>
                 </div>
                 <div>
                     <label >用户类别：</label>
-                     <input type="radio" name="gradeid" value="1"/>一年级
-                    <input type="radio" name="gradeid" value="2"/>二年级
-                    <input type="radio" name="gradeid" value="3"/>三年级
+                    <input type="radio" name="gradeid" ${student.grade_id == 1?"checked":""} value="1"/>一年级
+                    <input type="radio" name="gradeid" ${student.grade_id == 2?"checked":""} value="2"/>二年级
+                    <input type="radio" name="gradeid" ${student.grade_id == 3?"checked":""} value="3"/>三年级
 
                 </div>
                 <div class="providerAddBtn">
