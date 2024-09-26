@@ -177,4 +177,71 @@ public class StudentDao {
         }
         return null;
     }
+
+    //统计记录数
+    public int totalStudent(){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            //获取连接对象
+            conn = DBHelper.getConn();
+            //编写sql
+            String sql = "select count(*) from student";
+            //获取sql的预处理对象
+            ps = conn.prepareStatement(sql);
+            //执行sql
+            rs = ps.executeQuery();
+            if(rs != null){
+                if(rs.next()){
+                    return rs.getInt(1);
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DBHelper.closeAll(conn,ps,rs);
+        }
+        return 0;
+    }
+
+    public List<Student> getAllStudentByPage(int currentPage, int pageCount) {
+        List<Student> studentList = new ArrayList<Student>();
+        //获取连接对象
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            //获取连接对象
+            conn = DBHelper.getConn();
+            //编写sql
+            String sql = "select * from student limit ?,?";
+            //获取sql的预处理对象
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,(currentPage-1)*pageCount);
+            ps.setInt(2,pageCount);
+            //执行sql
+            rs = ps.executeQuery();
+            if(rs != null){
+                while(rs.next()){
+                    Student student = new Student();
+                    student.setStudent_no(rs.getString("student_no"));
+                    student.setStudent_name(rs.getString("student_name"));
+                    student.setAddress(rs.getString("address"));
+                    student.setEmail(rs.getString("email"));
+                    student.setPhone(rs.getString("phone"));
+                    student.setBorn_date(rs.getString("born_date"));
+                    student.setGrade_id(rs.getInt("Grade_id"));
+                    student.setLogin_pwd(rs.getString("login_pwd"));
+                    student.setSex(rs.getString("Sex"));
+                    studentList.add(student);
+                }
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBHelper.closeAll(conn, ps, rs);
+        }
+        return studentList;
+    }
 }

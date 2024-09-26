@@ -58,7 +58,7 @@
                 <th width="10%">用户类型</th>
                 <th width="30%">操作</th>
             </tr>
-            <c:forEach var="item" items="${studentList}">
+            <c:forEach var="item" items="${page.resultList}">
             <tr>
                 <td>${item.student_no}</td>
                 <td>${item.student_name}</td>
@@ -75,11 +75,11 @@
             </c:forEach>
             <tr>
                 <td colspan="7">
-                    当前第1页，6条数据&nbsp;&nbsp;&nbsp;&nbsp;共2页
-                    首页
-                    尾页
-                    上一页
-                    下一页
+                    当前第${page.pageNo}页，${page.rowCount}条数据&nbsp;&nbsp;&nbsp;&nbsp;共${page.pageCount}页
+                    <a href="/GetAllStudentByPageServlet?pageNo=${page.firstPage}">首页</a>
+                    <a href="/GetAllStudentByPageServlet?pageNo=${page.lastPage}">尾页</a>
+                    <a href="/GetAllStudentByPageServlet?pageNo=${page.prePage}">上一页</a>
+                    <a href="/GetAllStudentByPageServlet?pageNo=${page.nextPage}">下一页</a>
                 </td>
             </tr>
         </table>
